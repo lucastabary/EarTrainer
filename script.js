@@ -50,7 +50,15 @@ function launchGame() {
     }
 
     setTimeout(() => playKey(piano_keys[r], show=false), 1000);
+
+    this.addEventListener('onkeydown', function rePlayKey() {
+        if (e.code == 'KeyE') {
+            playKey(piano_keys[r])
+        }
+    })
+
     piano_keys[r].addEventListener('click', (e) => {
+        this.removeEventListener('onkeydown', rePlayKey);
         text.innerHTML = "Trouvé, c'était un " + keys[r];
         setTimeout(() => text.innerHTML = '', 1000);
         isStarted = false;
