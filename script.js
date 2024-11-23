@@ -5,8 +5,6 @@ const text = document.querySelectorAll('#text')[0];
 
 const keys = [...piano_keys].map((piano_key) => piano_key.dataset.key);
 
-const controller = new AbortController();
-const { signal } = controller;
 
 
 const sampler = new Tone.Sampler({
@@ -54,14 +52,16 @@ function launchGame() {
 
     setTimeout(() => playKey(piano_keys[r], show=false), 1000);
 
-    piano_keys[r].addEventListener('keydown', () => {
+    function rePlayKey(e) {
         if (e.code == 'KeyE') {
-            playKey(piano_keys[r]);
+            playKey(piano_keys[r], show=false)
         }
-    }, { signal })
+    }
+
+    this.addEventListener('keydown', rePlayKey)
 
     piano_keys[r].addEventListener('click', (e) => {
-        controller.abort()
+        this.removeEventListener('keydown', rePlayKey)
         text.innerHTML = "Trouvé, c'était un " + keys[r];
         setTimeout(() => text.innerHTML = '', 1000);
         isStarted = false;
