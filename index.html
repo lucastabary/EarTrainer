@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>EarTrainer</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <div class="container">
+        <div class="intro-container">
+            
+            <div class="left">
+                <p>Nombre de Notes</p><input type="number" id="notes-number" value="1">
+            </div>
+            <div class="right">
+                <p>Nombre de ½ ton max</p><input type="number" id="max-range" value="5">
+            </div>
+            <button onclick="startGame()">Start</button>
+            <p id="text"></p>
+            
+        </div>
+        <div class="piano-container">
+            <ul class="piano-keys-list">
+                <li class="piano-keys white-key" data-key="F2"></li>
+                <li class="piano-keys black-key" data-key="F#2"></li>
+                <li class="piano-keys white-key" data-key="G2"></li>
+                <li class="piano-keys black-key" data-key="G#2"></li>
+                <li class="piano-keys white-key" data-key="A2"></li>
+                <li class="piano-keys black-key" data-key="A#2"></li>
+                <li class="piano-keys white-key" data-key="B2"></li>
+                <li class="piano-keys white-key" data-key="C3"></li>
+                <li class="piano-keys black-key" data-key="C#3"></li>
+                <li class="piano-keys white-key" data-key="D3"></li>
+                <li class="piano-keys black-key" data-key="D#3"></li>
+                <li class="piano-keys white-key" data-key="E3"></li>
+                <li class="piano-keys white-key" data-key="F3"></li>
+                <li class="piano-keys black-key" data-key="F#3"></li>
+                <li class="piano-keys white-key" data-key="G3"></li>
+                <li class="piano-keys black-key" data-key="G#3"></li>
+                <li class="piano-keys white-key" data-key="A3"></li>
+                <li class="piano-keys black-key" data-key="A#3"></li>
+                <li class="piano-keys white-key" data-key="B3"></li>
+                <li class="piano-keys white-key" data-key="C4"></li>
+                <li class="piano-keys black-key" data-key="C#4"></li>
+                <li class="piano-keys white-key" data-key="D4"></li>
+                <li class="piano-keys black-key" data-key="D#4"></li>
+                <li class="piano-keys white-key" data-key="E4"></li>
+            </ul>
+        </div>
+    </div>
+
+    
+    <script src="http://unpkg.com/tone"></script>
+    <script src="script.js"></script>
+</body>
+
+</html>
