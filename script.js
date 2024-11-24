@@ -47,7 +47,6 @@ function launchGame() {
     while (Math.abs(ref-r) > parseInt(max_range.value)) {
         
         r = Math.floor((Math.random()*keys.length));
-        console.log(ref, r);
     }
 
     setTimeout(() => playKey(piano_keys[r], show=false), 1000);
